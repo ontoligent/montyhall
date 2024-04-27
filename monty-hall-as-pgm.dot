@@ -1,0 +1,40 @@
+digraph G {
+
+    rankdir = LR
+
+    node [fontname=arial]
+    S [shape=box]
+    X [shape=oval style=filled fillcolor=lightgray border=1]
+    G1 [shape=oval]
+    H [shape=box style=filled fillcolor=lightgray border=1]
+    G2 [shape=box]
+    R [shape=triangle style=filled fillcolor=lightgray border=1]
+    
+    node [shape=plaintext]
+    E0 [style=invis]
+    E1
+    E2
+    E3
+    E4
+    E5
+    
+    edge [arrowsize=0.75]
+    X -> R
+    X -> H
+    G1 -> H
+    H -> G2
+    G1 -> G2
+    S -> G2
+    G2 -> R
+    
+    edge [style=invis]
+    E0 -> E1 -> E2 -> E3 -> E4 -> E5
+
+    {rank=same; E0; S}
+    {rank=same; E1; X}
+    {rank=same; E2; G1}
+    {rank=same; E3; H}
+    {rank=same; E4; G2}
+    {rank=same; E5; R}
+
+}
